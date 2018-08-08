@@ -7,6 +7,7 @@ import {
 } from 'react-accessible-accordion';
 import './App.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
+
 class App extends Component {
   render() {
     return (
@@ -33,7 +34,13 @@ class App extends Component {
             <Accordion>
               <AccordionItem>
                 <AccordionItemTitle>
-                  <p>todo 1</p>
+                  <div className="deletebtn">
+                    <p>todo 1</p>
+                    <div style={{ flexDirection: 'row', paddingRight: '5px' }}>
+                      <span onClick={() => document.getElementById('id01').style.display = 'block'} className="fa fa-times" style={{ fontSize: '36px', color: '#369ef4' }}></span>
+                      <span onClick={() => document.getElementById('id02').style.display = 'block'} className="fa fa-edit" style={{ fontSize: '36px', color: '#369ef4', padding: 5 }}></span>
+                    </div>
+                  </div>
                 </AccordionItemTitle>
                 <AccordionItemBody>
                   <p>name</p>
@@ -42,7 +49,13 @@ class App extends Component {
               </AccordionItem>
               <AccordionItem>
                 <AccordionItemTitle>
-                  <p>todo 2</p>
+                <div className="deletebtn">
+                    <p>todo 2</p>
+                    <div style={{ flexDirection: 'row', paddingRight: '5px' }}>
+                      <span onClick={() => document.getElementById('id01').style.display = 'block'} className="fa fa-times" style={{ fontSize: '36px', color: '#369ef4' }}></span>
+                      <span onClick={() => document.getElementById('id02').style.display = 'block'} className="fa fa-edit" style={{ fontSize: '36px', color: '#369ef4', padding: 5 }}></span>
+                    </div>
+                  </div>
                 </AccordionItemTitle>
                 <AccordionItemBody>
                   <p>name</p>
@@ -51,7 +64,13 @@ class App extends Component {
               </AccordionItem>
               <AccordionItem>
                 <AccordionItemTitle>
-                  <p>todo 3</p>
+                <div className="deletebtn">
+                    <p>todo 3</p>
+                    <div style={{ flexDirection: 'row', paddingRight: '5px' }}>
+                      <span onClick={() => document.getElementById('id01').style.display = 'block'} className="fa fa-times" style={{ fontSize: '36px', color: '#369ef4' }}></span>
+                      <span onClick={() => document.getElementById('id02').style.display = 'block'} className="fa fa-edit" style={{ fontSize: '36px', color: '#369ef4', padding: 5 }}></span>
+                    </div>
+                  </div>
                 </AccordionItemTitle>
                 <AccordionItemBody>
                   <p>name</p>
@@ -61,6 +80,37 @@ class App extends Component {
             </Accordion>
           </div>
 
+        </div>
+
+        <div id="id01" className="w3-modal">
+          <div className="w3-modal-content">
+            <header className="w3-container " style={{ backgroundColor: '#369ef4', color: '#fff' }}>
+              <span onClick={() => document.getElementById('id01').style.display = 'none'}
+                className="w3-button w3-display-topright">&times;</span>
+              <h2>Todo 1</h2>
+            </header>
+            <div class="w3-container">
+              <p>Do you want to delete</p>
+            </div>
+            <footer class="w3-container" style={{ backgroundColor: '#369ef4' }}>
+              <button className='deletebutton'>Delete</button>
+            </footer>
+          </div>
+        </div>
+        <div id="id02" className="w3-modal">
+          <div className="w3-modal-content">
+            <header className="w3-container " style={{ backgroundColor: '#369ef4', color: '#fff' }}>
+              <span onClick={() => document.getElementById('id02').style.display = 'none'}
+                className="w3-button w3-display-topright">&times;</span>
+              <h2>Todo 1</h2>
+            </header>
+            <div class="w3-container">
+              <p>Do you want to update</p>
+            </div>
+            <footer class="w3-container" style={{ backgroundColor: '#369ef4' }}>
+              <button className='deletebutton'>Update</button>
+            </footer>
+          </div>
         </div>
       </div >
     );
